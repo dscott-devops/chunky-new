@@ -1,0 +1,79 @@
+.status {
+  width:80%;
+  margin:15px auto;
+  padding:15px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.statusf {
+  display:flex;
+  width:100%;
+}
+
+.statusfi {
+  width:100%;
+  margin-left: 5px;
+
+}
+.statusfimg span {
+  display:inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.statusfimg span img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ 
+}
+
+.statusfin {
+  width: 100%;
+  padding: 15px 25px;
+  border:none;
+  background-color: lightgray;
+  border-radius: 30px;
+  outline:none;
+
+}
+
+.statuseicon{
+  display:flex;
+  align-items:center;
+}
+
+.statusse {
+  width:100%;
+  border-top:1px solid #f0f2f5;
+  margin-top: 12px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.live {
+  color:#e72173;
+  font-size: 24px;
+}
+
+.photo {
+  color:green;
+  font-size: 24px;
+}
+
+.feeling {
+  color:aqua;
+  font-size: 24px;
+}
+
+.text {
+  margin-left:5px;
+  
+}
+
+
+

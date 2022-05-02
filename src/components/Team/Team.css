@@ -1,0 +1,45 @@
+.middle{
+  width:50%;
+  margin-left: 25%;
+  margin-top: 50px;
+  position:relative;
+}
+
+@media screen and (max-width: 600px) {
+  .middle {
+     width: 85%;
+  }
+
+  .l-navbar {
+    width: 0%
+  } 
+}
+
+
+.middle1{
+  display:flex;
+  padding: 10px 30px;
+  align-items: center;
+
+
+}
+
+.middleimg{
+width: 35px;
+height: 35px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.middleimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.middlename{
+  margin-left:12px;
+  font-weight: bold;
+
+}

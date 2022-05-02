@@ -1,0 +1,61 @@
+.updates {
+  width: 100%;
+  display: flex;
+}
+
+.updatesc {
+  width:20%;
+}
+
+.updatesb {
+  height:250px;
+  padding: 0 10px;
+  position:relative;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.updatesbo {
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
+.updatesbo img {
+  width:100%;
+  height: 100%;
+  object-fit:cover;
+  border-radius: 10px;
+}
+
+.updatesboimg {
+  width:35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 20px;
+  object-fit:cover;
+  border:3px solid blue;
+
+}
+
+
+.updatesboname{
+  position:absolute;
+  bottom:10px;
+  left:20px;
+  color:white;
+  font-weight:bold;
+  font-size:12px;
+}
+
+@media screen and (max-width: 600px) {
+  .updates {
+     width: 0%;
+     height: 0%;
+  }
+
+  
+}

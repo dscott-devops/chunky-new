@@ -1,0 +1,33 @@
+.left{
+  width:25%;
+  position: fixed;
+  top:90px;
+}
+
+.left1{
+  display:flex;
+  padding: 10px 30px;
+  align-items: center;
+
+
+}
+
+.leftimg{
+width: 35px;
+height: 35px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.leftimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.leftname{
+  margin-left:12px;
+  font-weight: bold;
+
+}

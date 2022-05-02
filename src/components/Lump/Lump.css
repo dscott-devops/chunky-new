@@ -1,0 +1,162 @@
+.news {
+  width: 80%;
+  margin: 25px auto;
+  background-color: white;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  
+}
+
+.newsheader {
+  display:flex;
+  align-items: center;
+  background-color: #f3f7fd;
+  
+}
+
+.newsheaderimg {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  overflow:hidden;
+}
+
+.newspost {
+  margin-bottom:5px;
+}
+
+.newsheaderimg img {
+  height:100%;
+  width:100%;
+  object-fit: cover;
+
+}
+
+.newsheadername {
+  margin-left: 12px;
+  font-weight: bold;
+}
+
+.date {
+  color: silver;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.newsbody {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.newsbodytest {
+  width: 100%;
+  margin:12px auto;
+}
+
+.newsbodyimg img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.teamlogo {
+  height: 35px;
+  width: 35px;
+}
+
+.teamlogo img {
+  height:100%;
+  width:100%;
+  object-fit: cover;
+
+}
+
+.teamheader {
+  display:flex;
+  align-items: center;
+}
+
+.teamname {
+  margin-left:5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.comment-info-box {
+  margin-top: 10px;
+  background-color: white;
+   
+}
+
+.comment-icons {
+  float: left;
+  width: 50%;
+}
+.comment-info-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.comment-number{
+  text-align: right;
+}
+
+.comments {
+  background-color: white;
+}
+.comment-box {
+  padding-top: 10px;
+  background-color: white;
+  width:100%;
+  border-top:1px solid #f0f2f5;
+  display: flex;
+  justify-content: space-between;
+   
+}
+
+
+
+.comment-buttons {
+  display:flex;
+  align-items:center;
+}
+.statusse {
+  width:100%;
+  border-top:1px solid #f0f2f5;
+  margin-top: 12px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.live {
+  color:#e72173;
+  font-size: 24px;
+}
+
+.photo {
+  color:green;
+  font-size: 24px;
+}
+
+.feeling {
+  color:aqua;
+  font-size: 24px;
+}
+
+.thumpup-icon {
+  color:aqua;
+  font-size: 24px;
+}
+
+.heart-icon {
+  color: red !important;
+  font-size: 24px;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
