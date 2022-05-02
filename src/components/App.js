@@ -115,7 +115,7 @@ const App = () => {
     console.log("Before Cookie",data)
     cookies.set("token", data.user.authentication_token, {
       path: "/",
-      domain: "chunkydata.com",
+      domain: "localhost",
       sameSite: "lax",
     });
   };
