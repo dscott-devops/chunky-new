@@ -41,6 +41,8 @@ const OpenNav = () => {
 const App = () => {
   const cookies = new Cookies();
   const [token, setToken] = useState("");
+  const [ userLoginData , setUserLoginData ] = useState([]);
+  const [ categoryImg , setCategoryImg ] = useState([]);
 
   const [state, setState] = useState({
     isLoggedin: false,
@@ -66,6 +68,8 @@ const App = () => {
       .get(url)
       .then((response) => {
         console.log("Checking Login Status", response);
+        setUserLoginData(response.data.sources);
+        
         if (response.data.isLoggedin && state.isLoggedin === false) {
           setState({
             isLoggedin: true,
@@ -83,6 +87,8 @@ const App = () => {
       })
       .catch((response) => console.log("Failed response", response));
   };
+
+  // console.log('userLoginData', userLoginData)
 
   const handleSuccessfulAuth = (data) => {
     //Todo update parent component
@@ -135,10 +141,11 @@ const App = () => {
 
   return (
     <Router>
-      <PageLayout state={state} >
+      <PageLayout state={state} userLoginData={userLoginData} >
       <Routes>
         <Route
           path="/"
+          
           element={
             <Home
               sources={state.sources}

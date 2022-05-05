@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { useState, useEffect, Fragment } from "react";
 import {
   FaVideo,
@@ -13,6 +14,8 @@ import "./Lump.css"
 import Lumpitems from "../Lumpitems/Lumpitems"
 
 import "./Lump.css";
+import { Box } from "@mui/system";
+import { Grid } from "@mui/material";
 
 const Lump = () => {
   const cookies = new Cookies();
@@ -68,12 +71,16 @@ const Lump = () => {
   let protocol
   protocol = location.protocol
   server = protocol + "//" + server
-  console.log("Server: ", server)
+  console.log("Server: ", server , source)
 
 
   return (
-    <div className="w-full flex flex-col gap-4 transition duration-500 p-3">
+    <Grid
+    item container
+    xs={12}
+    >
       {source.map((post) => (
+        <Box key={post.id} sx={{ width:'100%',mt:2 }}>
         <Lumpitems
           key={post.id}
           server={server}
@@ -88,9 +95,10 @@ const Lump = () => {
           youtube={post.attributes.youtube}
 
         />
+        </Box>
       ))
       }
-    </div>
+    </Grid>
   );
 };
 

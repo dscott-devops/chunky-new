@@ -1,65 +1,168 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   FaThumbsUp,
   FaHeart,
   FaSmile,
   FaAngry,
-  FaRegGrinAlt, FaVideo, FaImage, FaRegImages, FaGrinAlt
+  FaRegGrinAlt,
+  FaVideo,
+  FaImage,
+  FaRegImages,
+  FaGrinAlt,
 } from "react-icons/fa";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import {
+  Avatar,
+  Box,
+  Divider,
+  Typography,
+  Link as MuiLink,
+  Grid,
+} from "@mui/material";
 
 const Lumpitems = (props) => {
   //console.log(params);
 
   return (
-    <div key={props.id} className="p-3 shadow-lg rounded-lg bg-slate-200 flex flex-col gap-2">
-      <div className="flex items-center justify-start gap-2">
-      <Link to={"/teams/" + props.category + "/" + props.username} style={{ textDecoration: 'none' }} className="nav_logo"> 
+    <Box
+      key={props.id}
+      sx={{
+        bgcolor: "#e2e8f0",
+        p: 3,
+        boxShadow: 3,
+        borderRadius: "2px",
+      }}
+    >
+      {/* Head of post */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 2,
+        }}
+      >
+        <Link
+          to={`/teams/${props.category}/${props.username}`}
+          style={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "0px",
+          }}
+          className="nav_logo"
+        >
+          <Box
+            component="img"
+            src={props.server + "/" + props.username + ".png"}
+            alt={props.first + " " + props.last}
+            sx={{ width: "50px", borderRadius: "50%" }}
+          />
 
-        {/* <div className=""> */}
-        <img
-          src={props.server + "/" + props.username + ".png"}
-          alt={props.first + " " + props.last}
-          className="h-[50px] rounded-full"
-        />
-        {/* </div> */}
-        <p className="font-bold">{props.name + " - " + props.category}</p>
+          <Typography sx={{ fontSize: 20, fontWeight: "bold", color: "#000" }}>
+            {`${props.name} -  ${props.category}`}
+          </Typography>
         </Link>
-      </div>
-      <hr className="m-0"></hr>
-      <div className="flex items-start justify-start gap-2">
-        {/* <div className=""> */}
-        <img src={props.image} alt={props.title}
-          className="h-[50px] w-[50px] bg-cover rounded-full"
+      </Box>
+      <Divider />
+
+      {/* post head avatar and link text */}
+      <Box
+        sx={{
+          mt: 1.5,
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        <Avatar
+          src={props.image}
+          alt={props.title}
+          sx={{ width: "50px", height: 50, mr: 2 }}
         />
-        {/* </div> */}
+
         <div className="flex flex-col items-start justify-start">
-          <a href={props.link} target="_blank" className="font-bold">
+          <a
+            href={props.link}
+            target="_blank"
+            className="font-bold"
+            rel="noreferrer"
+          >
             {props.title}
           </a>
 
           <p className="text-sm text-slate-500">{props.created_at}</p>
         </div>
-      </div>
-      <div className="">
-        <div className="">{props.description}</div>
-        <div className="">
-          <a href={props.link} target="_blank">
-            <img src={props.image} alt={props.title} />
-          </a>
-        </div>
-      </div>
-      <div className="">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center justify-start gap-2 ">
-            <FaThumbsUp size={20} color="blue" />
-            <FaHeart size={20} color="red" />
-            <FaSmile size={20}  />
-            <FaAngry size={20} />
-          </div>
-          <p className="font-bold cursor-pointer">{Math.floor(Math.random() * 51)} Comments</p>
-        </div>
-      </div>
+      </Box>
+
+      {/* Post Description */}
+      <Box sx={{}}>
+        <Typography
+          sx={{ fontSize: 16, fontWeight: "normal", color: "#000", my: 1 }}
+        >
+          {props.description}
+        </Typography>
+
+        {/* Post Main Image */}
+        <MuiLink href={props.link} target="_blank" rel="noreferrer">
+          <Box
+            component="img"
+            src={props.image}
+            alt={props.title}
+            sx={{
+              width: "100%",
+              height: "100%",
+              "&:hover": { boxShadow: 3, borderRadius: "7px" },
+            }}
+          />
+        </MuiLink>
+      </Box>
+
+      {/*  Rating Icons */}
+      <Box>
+        <Grid
+          item
+          container
+          xs={12}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            my: 2,
+          }}
+        >
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              maxWidth: "140px !important",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <FaThumbsUp size={20} color="blue" style={{ cursor: "pointer" }} />
+            <FaHeart size={20} color="red" style={{ cursor: "pointer" }} />
+            <FaSmile size={20} style={{ cursor: "pointer" }} />
+            <FaAngry size={20} style={{ cursor: "pointer" }} />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            sx={{
+              display: "flex",
+              justifyContent: "end",
+            }}
+          >
+            <p className="font-bold cursor-pointer">
+              {Math.floor(Math.random() * 51)} Comments
+            </p>
+          </Grid>
+        </Grid>
+      </Box>
+
       <hr className="m-0" />
       <div className="flex items-center justify-between font-bold">
         <span className="flex items-center justify-start gap-2 cursor-pointer">
@@ -90,7 +193,7 @@ const Lumpitems = (props) => {
           </form>
         )}
       </div> */}
-    </div>
+    </Box>
   );
 };
 

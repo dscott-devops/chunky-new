@@ -15,7 +15,7 @@ const Home = (props) => {
 
   // console.log("User", props.user)
   // console.log("Sources", props.sources)
-  console.log("Lumps", props)
+  // console.log("Lumps", props)
 
   return (
 

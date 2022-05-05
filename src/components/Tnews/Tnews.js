@@ -85,11 +85,12 @@ const Tnews = () => {
   let server
   server = window.location.host
   let protocol
+  // eslint-disable-next-line no-restricted-globals
   protocol = location.protocol
   server = protocol + "//" + server
 
   return (
-    <div className="w-full flex flex-col gap-4 transition duration-500 p-3">
+    <div className="w-full flex flex-col gap-4 transition duration-500">
       {source.map((post) => (
         <Lumpitems
           key={post.id}

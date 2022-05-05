@@ -3,17 +3,18 @@ import "./Team.css"
 import Mupdates from "../Mupdates/Mupdates"
 import Status from "../Status/Status"
 import Tnews from "../Tnews/Tnews"
+import { Box } from "@mui/material"
 
 const Team = () => {
 
   
   
   return (
-    <div className="w-full flex flex-col gap-4 transition duration-500 p-3">
+    <Box sx={{  }}>
       <Status/>
       <Tnews/>
           
-    </div>   
+    </Box>   
   )
 }
 
