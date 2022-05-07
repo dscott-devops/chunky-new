@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import TeamMaintenance from "./TeamMaintenance/TeamMaintenance"
 import Login from "./Login/Login";
 import styled from "styled-components";
 import Header from "./Header/Header";
@@ -42,8 +41,6 @@ const OpenNav = () => {
 const App = () => {
   const cookies = new Cookies();
   const [token, setToken] = useState("");
-  const [ userLoginData , setUserLoginData ] = useState([]);
-  const [ categoryImg , setCategoryImg ] = useState([]);
 
   const [state, setState] = useState({
     isLoggedin: false,
@@ -69,8 +66,6 @@ const App = () => {
       .get(url)
       .then((response) => {
         console.log("Checking Login Status", response);
-        setUserLoginData(response.data.sources);
-        
         if (response.data.isLoggedin && state.isLoggedin === false) {
           setState({
             isLoggedin: true,
@@ -88,8 +83,6 @@ const App = () => {
       })
       .catch((response) => console.log("Failed response", response));
   };
-
-  // console.log('userLoginData', userLoginData)
 
   const handleSuccessfulAuth = (data) => {
     //Todo update parent component
@@ -142,11 +135,10 @@ const App = () => {
 
   return (
     <Router>
-      <PageLayout state={state} userLoginData={userLoginData} >
+      <PageLayout state={state} >
       <Routes>
         <Route
           path="/"
-          
           element={
             <Home
               sources={state.sources}
@@ -164,18 +156,6 @@ const App = () => {
               lumps={state.lumps}
               user={state.user}
               isLoggedin={state.isLoggedin}
-            />
-          }
-        />
-         <Route
-          path="/user/teams"
-          element={
-            <TeamMaintenance
-              sources={state.sources}
-              lumps={state.lumps}
-              user={state.user}
-              isLoggedin={state.isLoggedin}
-              handleSuccessfulAuth={handleSuccessfulAuth}
             />
           }
         />
@@ -221,6 +201,7 @@ const App = () => {
           path="/teams/nhl"
           element={<TeamLinks user={state.user} isLoggedin={state.isLoggedin} league="NHL" />}
         />
+
         <Route
           path="/teams/nfl/:id"
           element={<Team user={state.user} isLoggedin={state.isLoggedin} />}
