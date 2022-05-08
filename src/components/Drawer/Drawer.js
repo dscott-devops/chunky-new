@@ -20,7 +20,7 @@ import { useMediaQuery } from "react-responsive";
 import { BsFillChatRightTextFill } from "react-icons/bs";
 import { Grid } from "@mui/material";
 import CustomAppBar from "./AppBar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const drawerWidth = 260;
 const toolbar = 80;
@@ -59,6 +59,7 @@ function ResponsiveDrawer(props) {
     <div>
       <Toolbar />
       <Divider />
+      {props.userLoginData &&
       <List>
         {props.userLoginData.map((text, index) => (
           <ListItem button key={text.username}>
@@ -76,6 +77,7 @@ function ResponsiveDrawer(props) {
           </ListItem>
         ))}
       </List>
+}
       <Divider />
       <List>
         <ListItem button onClick={hendleNavigate}>
