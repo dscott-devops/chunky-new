@@ -54,6 +54,11 @@ function ResponsiveDrawer(props) {
     console.log("Home");
   };
 
+  const handleLogin = () => {
+    navigate("/login");
+    
+  };
+
   
   const drawer = (
     <div>
@@ -85,6 +90,12 @@ function ResponsiveDrawer(props) {
             <InboxIcon />
           </ListItemIcon>
           <Typography>Home</Typography>
+        </ListItem>
+        <ListItem button onClick={handleLogin}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography>Login</Typography>
         </ListItem>
       </List>
     </div>
