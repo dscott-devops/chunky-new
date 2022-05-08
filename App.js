@@ -1,41 +1,27 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  useNavigate
-} from "react-router-dom";
+  Route } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import Login from "./Login/Login";
 import styled from "styled-components";
-import Header from "./Header/Header";
-import LeftNav from "./LeftNav/LeftNav";
+//import Header from "./Header/Header";
+//import LeftNav from "./LeftNav/LeftNav";
 import Middle from "./Middle/Middle";
 import Signup from "./Signup/Signup";
 import Team from "./Team/Team";
 import Home from "./Home/Home";
 import Urlform from "./Urlform/Urlform";
 import "./App.css";
-import ChatArea from "./ChatArea/ChatArea";
+//import ChatArea from "./ChatArea/ChatArea";
 import PageLayout from "./PageLayout/PageLayout";
 import TeamLinks from "./TeamLinks/TeamLinks";
 
-const ProfileImg = styled.img`
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-`;
 
-const OpenNav = () => {
-  if (document.getElementById("mySidenav").style.width == "0px") {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginRight = "250px";
-  } else {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginRight = "0";
-  }
-};
+
+
 
 
 const App = () => {
@@ -56,9 +42,10 @@ const App = () => {
   };
 
   const checkLoginStatus = () => {
-    const temp = cookies.get("token");
+    
+    getToken();
 
-    const url = `https://chunkysports.com/api/v1/loggedin/${temp}`;
+    const url = `https://chunkysports.com/api/v1/loggedin/${token}`;
 
     //console.log("Token:", token)
 
