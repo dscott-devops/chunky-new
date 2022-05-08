@@ -43,7 +43,7 @@ function ResponsiveDrawer(props) {
 
   useEffect(() => {
     if (isMobile) {
-      setChatOpen(false);
+      setChatOpen(true);
     } else {
       setChatOpen(false);
     }
@@ -54,40 +54,28 @@ function ResponsiveDrawer(props) {
     console.log("Home");
   };
 
-  const handleLoginNavigate = () => {
-    navigate("/login");
-    console.log("Login");
-  };
-
-  const handleMenuNavigate = (loc) => {
-    navigate(loc);
-    console.log(loc);
-  };
-
-
   
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
-      {props.userLoginData && 
       <List>
         {props.userLoginData.map((text, index) => (
-          <ListItem button onClick={handleMenuNavigate(`/teams/${text.category}/${text.username}`)} key={text.username}>
+          <ListItem button key={text.username}>
             <ListItemIcon>
               <MailIcon />
             </ListItemIcon>
 
-           
+            <Link to={`/teams/${text.category}/${text.username}`}>
+              {console.log(`/teams/${text.category}/${text.username}`)}
               <Typography>
                 {text.first_name} {text.last_name}
               </Typography>
-           
+            </Link>
 
           </ListItem>
         ))}
       </List>
-}
       <Divider />
       <List>
         <ListItem button onClick={hendleNavigate}>
@@ -95,12 +83,6 @@ function ResponsiveDrawer(props) {
             <InboxIcon />
           </ListItemIcon>
           <Typography>Home</Typography>
-        </ListItem>
-        <ListItem button onClick={handleLoginNavigate}>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <Typography>Login</Typography>
         </ListItem>
       </List>
     </div>
