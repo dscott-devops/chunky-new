@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ChatArea from "../ChatArea/ChatArea";
-import Header from "../Header/Header";
-import LeftNav from "../LeftNav/LeftNav";
+//import ChatArea from "../ChatArea/ChatArea";
+//import Header from "../Header/Header";
+//import LeftNav from "../LeftNav/LeftNav";
 import { useMediaQuery } from "react-responsive";
-import { BsFillChatRightTextFill } from "react-icons/bs";
+//import { BsFillChatRightTextFill } from "react-icons/bs";
 import ResponsiveDrawer from "../Drawer/Drawer";
 import { Box } from "@mui/system";
 
@@ -14,9 +14,9 @@ function PageLayout(props) {
 
   const isMobile = useMediaQuery({ query: "(max-width: 780px)" });
 
-  const toggleSideBar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  // const toggleSideBar = () => {
+  //   setSidebarOpen(!sidebarOpen);
+  // };
 
   useEffect(() => {
     if (isMobile) {
@@ -38,6 +38,7 @@ function PageLayout(props) {
           children={children}
           user={state.user}
           isLoggedin={state.isLoggedin}
+          checkLoginStatus={checkLoginStatus}
           sources={state.sources}
           userLoginData={userLoginData}
           // categoryImg={categoryImg}
