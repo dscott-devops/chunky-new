@@ -125,6 +125,17 @@ const App = () => {
       domain: "localhost",
       sameSite: "lax",
     });
+    cookies.set("token", data.user.authentication_token, {
+      path: "/",
+      domain: "192.168.1.24",
+      sameSite: "lax",
+    });
+    cookies.set("token", data.user.authentication_token, {
+      path: "/",
+      domain: "chunkyreport.com",
+      sameSite: "lax",
+    });
+
   };
 
   const handleLogout = () => {
