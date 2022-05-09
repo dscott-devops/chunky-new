@@ -60,10 +60,11 @@ const App = () => {
 
   const checkLoginStatus = () => {
     const temp = cookies.get("token");
+    getToken();
 
     const url = `https://chunkysports.com/api/v1/loggedin/${temp}`;
 
-    //console.log("Token:", token)
+    console.log("Token:", token)
 
     axios
       .get(url)
