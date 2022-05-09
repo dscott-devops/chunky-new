@@ -122,9 +122,15 @@ const App = () => {
     console.log("Before Cookie",data)
     cookies.set("token", data.user.authentication_token, {
       path: "/",
+      domain: "chunkyreport.com",
+      sameSite: "lax",
+    });
+    cookies.set("token", data.user.authentication_token, {
+      path: "/",
       domain: "localhost",
       sameSite: "lax",
     });
+   
   };
 
   const handleLogout = () => {
