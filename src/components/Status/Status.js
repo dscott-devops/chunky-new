@@ -12,7 +12,7 @@ const Status = () => {
       <div className="statusf">
         <div className="statusfimg">
           <span>
-            <img src={"http://" + window.location.host + "/me.jpg" }/>
+            <img src={"https://" + window.location.host + "/me.jpg" }/>
           </span>
         </div>
         <div className="statusfi">
